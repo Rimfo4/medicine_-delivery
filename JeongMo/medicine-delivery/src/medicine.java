@@ -1,14 +1,10 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
-public class medicine {
+public class Medicine {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        inputData IPD = new inputData();
-        ArrayList<Character> arr = new ArrayList<>();
 
-
-        System.out.println("님의 진단을 시작하겠습니다.\n"); //사용자 이름 필요
+        System.out.println(InputData.name+"님의 진단을 시작하겠습니다.\n"); //사용자 이름 필요
         System.out.println("다음 중 아프신 신체부위를 선택해주세요.");
         System.out.println("1. 머리 | 2. 상체 | 3. 하체");
 
@@ -18,20 +14,28 @@ public class medicine {
             temp = sc.next();
         }
         System.out.println();
-
+        while(InputData.calcSelect(temp, '3')){
+            System.out.println("다시 제대로 입력해주십시오.");
+            temp = sc.next();
+            if(!(InputData.calcSelect(temp,'3'))) break;
+        }
         String spin1 = temp;
         byte cnt1 = 0;
         while(spin1.length() != cnt1){
-            System.out.println("아프신 부위를 골라주세요.");
             switch(spin1.charAt(cnt1)){
                 case '1' -> {
+                    System.out.println("머리에서 아프신 부위를 골라주세요.");
                     System.out.println("1. 머리 | 2. 눈 | 3. 코 | 4. 입 | 5. 귀 | 6. 목");
                     temp = sc.next();
                     while(temp.isEmpty() || temp.length() > 6) {
                         System.out.println("다시 입력해주십시오.");
                         temp = sc.next();
                     }
-
+                    while(InputData.calcSelect(temp, '6')){
+                        System.out.println("다시 제대로 입력해주십시오.");
+                        temp = sc.next();
+                        if(!(InputData.calcSelect(temp,'6'))) break;
+                    }
                     String spin2 = temp;
                     byte cnt2 = 0;
                     while(spin2.length() != cnt2){
@@ -44,6 +48,11 @@ public class medicine {
                                     System.out.println("다시 입력해주십시오.");
                                     temp = sc.next();
                                 }
+                                while(InputData.calcSelect(temp, '4')){
+                                    System.out.println("다시 제대로 입력해주십시오.");
+                                    temp = sc.next();
+                                    if(!(InputData.calcSelect(temp, '4'))) break;
+                                }
                                 cnt2++;
                             }
                             case '2' -> {
@@ -52,6 +61,11 @@ public class medicine {
                                 while(temp.isEmpty() || temp.length() > 4) {
                                     System.out.println("다시 입력해주십시오.");
                                     temp = sc.next();
+                                }
+                                while(InputData.calcSelect(temp, '4')){
+                                    System.out.println("다시 제대로 입력해주십시오.");
+                                    temp = sc.next();
+                                    if(!(InputData.calcSelect(temp, '4'))) break;
                                 }
                                 cnt2++;
                             }
@@ -62,6 +76,11 @@ public class medicine {
                                     System.out.println("다시 입력해주십시오.");
                                     temp = sc.next();
                                 }
+                                while(InputData.calcSelect(temp,  '4')){
+                                    System.out.println("다시 제대로 입력해주십시오.");
+                                    temp = sc.next();
+                                    if(!(InputData.calcSelect(temp,  '4'))) break;
+                                }
                                 cnt2++;
                             }
                             case '4' -> {
@@ -70,6 +89,11 @@ public class medicine {
                                 while(temp.isEmpty() || temp.length() > 4) {
                                     System.out.println("다시 입력해주십시오.");
                                     temp = sc.next();
+                                }
+                                while(InputData.calcSelect(temp,  '4')){
+                                    System.out.println("다시 제대로 입력해주십시오.");
+                                    temp = sc.next();
+                                    if(!(InputData.calcSelect(temp,  '4'))) break;
                                 }
                                 cnt2++;
                             }
@@ -80,6 +104,11 @@ public class medicine {
                                     System.out.println("다시 입력해주십시오.");
                                     temp = sc.next();
                                 }
+                                while(InputData.calcSelect(temp,  '4')){
+                                    System.out.println("다시 제대로 입력해주십시오.");
+                                    temp = sc.next();
+                                    if(!(InputData.calcSelect(temp,  '4'))) break;
+                                }
                                 cnt2++;
                             }
                             case '6' -> {
@@ -89,6 +118,11 @@ public class medicine {
                                     System.out.println("다시 입력해주십시오.");
                                     temp = sc.next();
                                 }
+                                while(InputData.calcSelect(temp,  '4')){
+                                    System.out.println("다시 제대로 입력해주십시오.");
+                                    temp = sc.next();
+                                    if(!(InputData.calcSelect(temp,  '4'))) break;
+                                }
                                 cnt2++;
                             }
                         }
@@ -96,11 +130,17 @@ public class medicine {
                     cnt1++;
                 }
                 case '2' -> {
+                    System.out.println("상체에서 아프신 부위를 골라주세요.");
                     System.out.println("1. 어깨 | 2. 가슴 | 3. 팔 | 4. 손 | 5. 등 | 6. 배 | 7. 허리");
                     temp = sc.next();
                     while(temp.isEmpty() || temp.length() > 7) {
                         System.out.println("다시 입력해주십시오.");
                         temp = sc.next();
+                    }
+                    while(InputData.calcSelect(temp,  '7')){
+                        System.out.println("다시 제대로 입력해주십시오.");
+                        temp = sc.next();
+                        if(!(InputData.calcSelect(temp,  '7'))) break;
                     }
                     String spin2 = temp;
                     byte cnt2 = 0;
@@ -114,6 +154,11 @@ public class medicine {
                                     System.out.println("다시 입력해주십시오.");
                                     temp = sc.next();
                                 }
+                                while(InputData.calcSelect(temp,  '4')){
+                                    System.out.println("다시 제대로 입력해주십시오.");
+                                    temp = sc.next();
+                                    if(!(InputData.calcSelect(temp,  '4'))) break;
+                                }
                                 cnt2++;
                             }
                             case '2' -> {
@@ -122,6 +167,11 @@ public class medicine {
                                 while(temp.isEmpty() || temp.length() > 4) {
                                     System.out.println("다시 입력해주십시오.");
                                     temp = sc.next();
+                                }
+                                while(InputData.calcSelect(temp,  '4')){
+                                    System.out.println("다시 제대로 입력해주십시오.");
+                                    temp = sc.next();
+                                    if(!(InputData.calcSelect(temp,  '4'))) break;
                                 }
                                 cnt2++;
                             }
@@ -132,6 +182,11 @@ public class medicine {
                                     System.out.println("다시 입력해주십시오.");
                                     temp = sc.next();
                                 }
+                                while(InputData.calcSelect(temp, '4')){
+                                    System.out.println("다시 제대로 입력해주십시오.");
+                                    temp = sc.next();
+                                    if(!(InputData.calcSelect(temp, '4'))) break;
+                                }
                                 cnt2++;
                             }
                             case '4' -> {
@@ -140,6 +195,11 @@ public class medicine {
                                 while(temp.isEmpty() || temp.length() > 4) {
                                     System.out.println("다시 입력해주십시오.");
                                     temp = sc.next();
+                                }
+                                while(InputData.calcSelect(temp, '4')){
+                                    System.out.println("다시 제대로 입력해주십시오.");
+                                    temp = sc.next();
+                                    if(!InputData.calcSelect(temp, '4')) break;
                                 }
                                 cnt2++;
                             }
@@ -150,6 +210,11 @@ public class medicine {
                                     System.out.println("다시 입력해주십시오.");
                                     temp = sc.next();
                                 }
+                                while(InputData.calcSelect(temp, '4')){
+                                    System.out.println("다시 제대로 입력해주십시오.");
+                                    temp = sc.next();
+                                    if(!InputData.calcSelect(temp, '4')) break;
+                                }
                                 cnt2++;
                             }
                             case '6' -> {
@@ -158,6 +223,11 @@ public class medicine {
                                 while(temp.isEmpty() || temp.length() > 4) {
                                     System.out.println("다시 입력해주십시오.");
                                     temp = sc.next();
+                                }
+                                while(InputData.calcSelect(temp, '4')){
+                                    System.out.println("다시 제대로 입력해주십시오.");
+                                    temp = sc.next();
+                                    if(!InputData.calcSelect(temp, '4')) break;
                                 }
                                 cnt2++;
                             }
@@ -168,6 +238,11 @@ public class medicine {
                                     System.out.println("다시 입력해주십시오.");
                                     temp = sc.next();
                                 }
+                                while(InputData.calcSelect(temp, '4')){
+                                    System.out.println("다시 제대로 입력해주십시오.");
+                                    temp = sc.next();
+                                    if(!InputData.calcSelect(temp, '4')) break;
+                                }
                                 cnt2++;
                             }
                         }
@@ -175,11 +250,17 @@ public class medicine {
                     cnt1++;
                 }
                 case '3' -> {
+                    System.out.println("하체에서 아프신 부위를 골라주세요.");
                     System.out.println("1. 급소 | 2. 엉덩이 | 3. 허벅지 | 4. 무릎 | 5. 종아리 | 6. 발목 | 7. 발");
                     temp = sc.next();
                     while(temp.isEmpty() || temp.length() > 7) {
                         System.out.println("다시 입력해주십시오.");
                         temp = sc.next();
+                    }
+                    while(InputData.calcSelect(temp, '4')){
+                        System.out.println("다시 제대로 입력해주십시오.");
+                        temp = sc.next();
+                        if(!InputData.calcSelect(temp, '4')) break;
                     }
                     String spin2 = temp;
                     byte cnt2 = 0;
@@ -193,6 +274,11 @@ public class medicine {
                                     System.out.println("다시 입력해주십시오.");
                                     temp = sc.next();
                                 }
+                                while(InputData.calcSelect(temp, '4')){
+                                    System.out.println("다시 제대로 입력해주십시오.");
+                                    temp = sc.next();
+                                    if(!(InputData.calcSelect(temp, '4'))) break;
+                                }
                                 cnt2++;
                             }
                             case '2' -> {
@@ -201,6 +287,11 @@ public class medicine {
                                 while (temp.isEmpty() || temp.length() > 4) {
                                     System.out.println("다시 입력해주십시오.");
                                     temp = sc.next();
+                                }
+                                while(InputData.calcSelect(temp, '4')){
+                                    System.out.println("다시 제대로 입력해주십시오.");
+                                    temp = sc.next();
+                                    if(!(InputData.calcSelect(temp, '4'))) break;
                                 }
                                 cnt2++;
                             }
@@ -211,6 +302,11 @@ public class medicine {
                                     System.out.println("다시 입력해주십시오.");
                                     temp = sc.next();
                                 }
+                                while(InputData.calcSelect(temp, '4')){
+                                    System.out.println("다시 제대로 입력해주십시오.");
+                                    temp = sc.next();
+                                    if(!(InputData.calcSelect(temp, '4'))) break;
+                                }
                                 cnt2++;
                             }
                             case '4' -> {
@@ -220,15 +316,24 @@ public class medicine {
                                     System.out.println("다시 입력해주십시오.");
                                     temp = sc.next();
                                 }
+                                while(InputData.calcSelect(temp, '4')){
+                                    System.out.println("다시 제대로 입력해주십시오.");
+                                    temp = sc.next();
+                                    if(!(InputData.calcSelect(temp, '4'))) break;
+                                }
                                 cnt2++;
                             }
-
                             case '5' -> {
                                 System.out.println("1. 근육 경련 | 2. 부종 | 3. 통증 | 4. 피로감");
                                 temp = sc.next();
                                 while (temp.isEmpty() || temp.length() > 4) {
                                     System.out.println("다시 입력해주십시오.");
                                     temp = sc.next();
+                                }
+                                while(InputData.calcSelect(temp, '4')){
+                                    System.out.println("다시 제대로 입력해주십시오.");
+                                    temp = sc.next();
+                                    if(!(InputData.calcSelect(temp, '4'))) break;
                                 }
                                 cnt2++;
                             }
@@ -239,6 +344,11 @@ public class medicine {
                                     System.out.println("다시 입력해주십시오.");
                                     temp = sc.next();
                                 }
+                                while(InputData.calcSelect(temp, '4')){
+                                    System.out.println("다시 제대로 입력해주십시오.");
+                                    temp = sc.next();
+                                    if(!(InputData.calcSelect(temp, '4'))) break;
+                                }
                                 cnt2++;
                             }
                             case '7' -> {
@@ -247,6 +357,11 @@ public class medicine {
                                 while (temp.isEmpty() || temp.length() > 4) {
                                     System.out.println("다시 입력해주십시오.");
                                     temp = sc.next();
+                                }
+                                while(InputData.calcSelect(temp,  '4')){
+                                    System.out.println("다시 제대로 입력해주십시오.");
+                                    temp = sc.next();
+                                    if(!(InputData.calcSelect(temp,  '4'))) break;
                                 }
                                 cnt2++;
                             }

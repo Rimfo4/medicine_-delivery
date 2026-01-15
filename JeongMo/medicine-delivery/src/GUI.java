@@ -5,9 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class GUI extends JFrame {
-    static String name;
-    static String addr;
-
     JFrame f = new JFrame();
     JPanel p = new JPanel();
     JPanel p1 = new JPanel();
@@ -65,9 +62,9 @@ public class GUI extends JFrame {
         check.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                name = name_t.getText();
-                addr = addr_t.getText();
-                System.out.println(name+" "+addr);
+                InputData.name = name_t.getText();
+                InputData.addr = addr_t.getText();
+                System.out.println(InputData.name+" "+ InputData.addr);
 
                 f.remove(p1);
                 main();
